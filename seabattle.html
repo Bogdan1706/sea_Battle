@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>SeaBattle</title>
+</head>
+<body>
+  <h1 class="title">Играй в Морской бой !!!</h1>
+
+  <div class="messageArea">
+    <div class="messageArea-avatar"></div>
+    <div class="messageArea-msg">
+      <p id="message-text" class="messageArea-text">
+        
+      </p>
+    </div>
+  </div>
+
+  <div class="playing-field" id="board">
+    <div class="playing-left">
+      <div class="radar">
+        <svg width="100%" height="100%" viewBox = "0 0 500 500" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink">
+          <image  xlink:href="./imags/circule.svg" x="0" y="0" height="500" width="500"/>
+        </svg>
+      </div>
+    
+      <div id="attack" class="playing-attack">
+        <table>
+          <thead>
+            <tr>
+              <th> </th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+              <th>8</th>
+              <th>9</th>
+              <th>10</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A</td>
+              <td id="A00"> </td>
+              <td id="A01"> </td>
+              <td id="A02"> </td>
+              <td id="A03"> </td>
+              <td id="A04"> </td>
+              <td id="A05"> </td>
+              <td id="A06"> </td>
+              <td id="A07"> </td>
+              <td id="A08"> </td>
+              <td id="A09"> </td>
+            </tr>
+            <tr>
+              <td>B</td>
+              <td id="A10"></td>
+              <td id="A11"></td>
+              <td id="A12"></td>
+              <td id="A13"></td>
+              <td id="A14"></td>
+              <td id="A15"></td>
+              <td id="A16"></td>
+              <td id="A17"></td>
+              <td id="A18"></td>
+              <td id="A19"></td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td id="A20"></td>
+              <td id="A21"></td>
+              <td id="A22"></td>
+              <td id="A23"></td>
+              <td id="A24"></td>
+              <td id="A25"></td>
+              <td id="A26"></td>
+              <td id="A27"></td>
+              <td id="A28"></td>
+              <td id="A29"></td>
+            </tr>
+            <tr>
+              <td>D</td>
+              <td id="A30"></td>
+              <td id="A31"></td>
+              <td id="A32"></td>
+              <td id="A33"></td>
+              <td id="A34"></td>
+              <td id="A35"></td>
+              <td id="A36"></td>
+              <td id="A37"></td>
+              <td id="A38"></td>
+              <td id="A39"></td>
+            </tr>
+            <tr>
+              <td>E</td>
+              <td id="A40"></td>
+              <td id="A41"></td>
+              <td id="A42"></td>
+              <td id="A43"></td>
+              <td id="A44"></td>
+              <td id="A45"></td>
+              <td id="A46"></td>
+              <td id="A47"></td>
+              <td id="A48"></td>
+              <td id="A49"></td>
+            </tr>
+            <tr>
+              <td>F</td>
+              <td id="A50"></td>
+              <td id="A51"></td>
+              <td id="A52"></td>
+              <td id="A53"></td>
+              <td id="A54"></td>
+              <td id="A55"></td>
+              <td id="A56"></td>
+              <td id="A57"></td>
+              <td id="A58"></td>
+              <td id="A59"></td>
+            </tr>
+            <tr>
+              <td>G</td>
+              <td id="A60"></td>
+              <td id="A61"></td>
+              <td id="A62"></td>
+              <td id="A63"></td>
+              <td id="A64"></td>
+              <td id="A65"></td>
+              <td id="A66"></td>
+              <td id="A67"></td>
+              <td id="A68"></td>
+              <td id="A69"></td>
+            </tr>
+            <tr>
+              <td>H</td>
+              <td id="A70"></td>
+              <td id="A71"></td>
+              <td id="A72"></td>
+              <td id="A73"></td>
+              <td id="A74"></td>
+              <td id="A75"></td>
+              <td id="A76"></td>
+              <td id="A77"></td>
+              <td id="A78"></td>
+              <td id="A79"></td>
+            </tr>
+            <tr>
+              <td>I</td>
+              <td id="A80"></td>
+              <td id="A81"></td>
+              <td id="A82"></td>
+              <td id="A83"></td>
+              <td id="A84"></td>
+              <td id="A85"></td>
+              <td id="A86"></td>
+              <td id="A87"></td>
+              <td id="A88"></td>
+              <td id="A89"></td>
+            </tr>
+            <tr>
+              <td>J</td>
+              <td id="A90"></td>
+              <td id="A91"></td>
+              <td id="A92"></td>
+              <td id="A93"></td>
+              <td id="A94"></td>
+              <td id="A95"></td>
+              <td id="A96"></td>
+              <td id="A97"></td>
+              <td id="A98"></td>
+              <td id="A99"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div class="show-ship">
+
+     <div class="show-row">
+      <div class="show-onedeck">
+        <p class="show-number">4</p>
+      </div>
+     </div>
+
+     <div class="show-row">
+      <div class="show-onedeck">
+        <p class="show-number">3</p>
+      </div>
+      <div class="show-onedeck"></div>
+     </div>
+
+     <div class="show-row">
+      <div class="show-onedeck">
+        <p class="show-number">2</p>
+      </div>
+      <div class="show-onedeck"></div>
+      <div class="show-onedeck"></div>
+     </div>
+
+     <div class="show-row">
+      <div class="show-onedeck">
+        <p class="show-number">1</p>
+      </div>
+      <div class="show-onedeck"></div>
+      <div class="show-onedeck"></div>
+      <div class="show-onedeck"></div>
+     </div>
+    </div>
+    <div id="observe" class="playing-right">
+      <table>
+        <thead>
+          <tr>
+            <th> </th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td id="B00"> </td>
+            <td id="B01"> </td>
+            <td id="B02"> </td>
+            <td id="B03"> </td>
+            <td id="B04"> </td>
+            <td id="B05"> </td>
+            <td id="B06"> </td>
+            <td id="B07"> </td>
+            <td id="B08"> </td>
+            <td id="B09"> </td>
+          </tr>
+          <tr>
+            <td>B</td>
+            <td id="B10"></td>
+            <td id="B11"></td>
+            <td id="B12"></td>
+            <td id="B13"></td>
+            <td id="B14"></td>
+            <td id="B15"></td>
+            <td id="B16"></td>
+            <td id="B17"></td>
+            <td id="B18"></td>
+            <td id="B19"></td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td id="B20"></td>
+            <td id="B21"></td>
+            <td id="B22"></td>
+            <td id="B23"></td>
+            <td id="B24"></td>
+            <td id="B25"></td>
+            <td id="B26"></td>
+            <td id="B27"></td>
+            <td id="B28"></td>
+            <td id="B29"></td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td id="B30"></td>
+            <td id="B31"></td>
+            <td id="B32"></td>
+            <td id="B33"></td>
+            <td id="B34"></td>
+            <td id="B35"></td>
+            <td id="B36"></td>
+            <td id="B37"></td>
+            <td id="B38"></td>
+            <td id="B39"></td>
+          </tr>
+          <tr>
+            <td>E</td>
+            <td id="B40"></td>
+            <td id="B41"></td>
+            <td id="B42"></td>
+            <td id="B43"></td>
+            <td id="B44"></td>
+            <td id="B45"></td>
+            <td id="B46"></td>
+            <td id="B47"></td>
+            <td id="B48"></td>
+            <td id="B49"></td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td id="B50"></td>
+            <td id="B51"></td>
+            <td id="B52"></td>
+            <td id="B53"></td>
+            <td id="B54"></td>
+            <td id="B55"></td>
+            <td id="B56"></td>
+            <td id="B57"></td>
+            <td id="B58"></td>
+            <td id="B59"></td>
+          </tr>
+          <tr>
+            <td>G</td>
+            <td id="B60"></td>
+            <td id="B61"></td>
+            <td id="B62"></td>
+            <td id="B63"></td>
+            <td id="B64"></td>
+            <td id="B65"></td>
+            <td id="B66"></td>
+            <td id="B67"></td>
+            <td id="B68"></td>
+            <td id="B69"></td>
+          </tr>
+          <tr>
+            <td>H</td>
+            <td id="B70"></td>
+            <td id="B71"></td>
+            <td id="B72"></td>
+            <td id="B73"></td>
+            <td id="B74"></td>
+            <td id="B75"></td>
+            <td id="B76"></td>
+            <td id="B77"></td>
+            <td id="B78"></td>
+            <td id="B79"></td>
+          </tr>
+          <tr>
+            <td>I</td>
+            <td id="B80"></td>
+            <td id="B81"></td>
+            <td id="B82"></td>
+            <td id="B83"></td>
+            <td id="B84"></td>
+            <td id="B85"></td>
+            <td id="B86"></td>
+            <td id="B87"></td>
+            <td id="B88"></td>
+            <td id="B89"></td>
+          </tr>
+          <tr>
+            <td>J</td>
+            <td id="B90"></td>
+            <td id="B91"></td>
+            <td id="B92"></td>
+            <td id="B93"></td>
+            <td id="B94"></td>
+            <td id="B95"></td>
+            <td id="B96"></td>
+            <td id="B97"></td>
+            <td id="B98"></td>
+            <td id="B99"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+
+
+
+  
+
+  <script src="seabattle.js"></script>
+</body>
+</html>
